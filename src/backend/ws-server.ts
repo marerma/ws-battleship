@@ -55,6 +55,9 @@ export const initWsServer = (port: number) => {
         }
       }
     });
+    ws.on('close', async () => {
+      console.log('Goodbuy, you are disconnected from websocket');
+    });
   });
   wss.on('listening', () => {
     console.log(`WS server is running on port ${port}`);
